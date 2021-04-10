@@ -5,4 +5,6 @@ Para resolver la problemática de uso de recursos que son comunes a una Unidad s
 
 La aplicación debe permitir reservar tanto Salas de Juntas destinadas a eventos, reuniones, etc, como coches de enlace para los desplazamientos en comisión de servicio del personal de la  Unidad.
 
-Asimismo, deberá permitir las  reservas  que se han hecho de un activo entre dos fechas.
+Asimismo, deberá permitir ver las  reservas  que se han hecho de un activo entre dos fechas.
+
+Se desplegará una aplicación multidispositivo.
