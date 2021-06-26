@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm 
+                                     http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+                 version="1.0">
+
+ <mapped-superclass class="com.example.proyectolib.entidades.Reserva" access="FIELD">
+       
+        <!-- No hace falta strategy es el valor por defecto -->
+        <attributes>
+            
+            <basic name="fechaInicio">
+                <column name="FECHAINICIO"/>
+            </basic>
+             <basic name="fechaFin">
+                <column name="FECHAFIN"/>
+            </basic>
+        </attributes>
+    </mapped-superclass>
+</entity-mappings>
+
+ 
