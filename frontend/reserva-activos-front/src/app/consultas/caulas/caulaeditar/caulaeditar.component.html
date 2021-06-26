@@ -1,0 +1,40 @@
+<form #reservaForm="ngForm">
+    <div class="form-row py-2">
+      <div class="col-lg-4 col-md-12">
+        <label >Nombre <sup class="text-danger">*</sup></label
+        >
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="reserva.fechaInicio"
+          placeholder="fechaInicio"
+          name="propi"
+          required
+          #propi="ngModel"
+          
+        />
+        <input
+        type="date"
+        class="form-control"
+        [(ngModel)]="reserva.fechaFin"
+        placeholder="fechaInicio"
+        name="propi"
+        required
+        #propi="ngModel"
+        
+      />
+      </div>
+    </div>
+      
+    <div class="form-row justify-content-between pt-5">
+      <div class="col-lg-5 col-md-12">
+        <button
+          class="btn btn-primary"
+          role="button" (click)="onCambio()">
+          Crear Reserva
+        </button>
+        
+      </div>
+    </div>
+</form>
+  

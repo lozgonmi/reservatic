@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-3   mt-3">{{aula.nombreAula | titlecase}} </div>
+    <div class="col-2  mt-3"> {{aula.proyector }}</div>
+    <div class="col-1"></div>
+    
+    <div class="col-2"><a class="" data-toggle="modal"
+      data-target="#modalreservas" (click)='aulaSeleccionada.emit(aula)'>
+       <button  type="button" name="editar"  class="btn"  >
+     Reservar</button></a></div>
+  </div>

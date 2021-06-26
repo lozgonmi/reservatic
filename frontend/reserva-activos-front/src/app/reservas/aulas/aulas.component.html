@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-3 mx-2">NOMBRE</div>
+    <div class="col-2 mx-2">PROYECTOR</div>      
+    </div>
+    <hr class='w-100'>
+    <div *ngFor='let aula of aulas'>
+      <app-aula
+      [aula]= 'aula' (aulaSeleccionada)="verDatos($event)"
+      ></app-aula>    
+    </div>
+    
+
+  <!--Modal-->
+  <div class="modal fade" id="modalreservas" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="Realizar Reserva" id="exampleModalLongTitle">Introduzca los datos de la reserva</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         <form #reservaForm="ngForm">
+              <div class="form-row py-2">
+                <div class="col-lg-4 col-md-12">
+                  <label >Fecha Inicio Reserva <sup class="text-danger">*</sup></label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    [(ngModel)]="reserva.fechaInicio"                   
+                    name="propi"
+                    required                   
+                    #propi="ngModel"/>
+                </div>
+              </div>
+              <div class="form-row py-2">
+              <div class="col-lg-4 col-md-12">
+                <label >Fecha Fin Reserva <sup class="text-danger">*</sup></label>
+                <input
+                  type="date"
+                  class="form-control"
+                  [(ngModel)]="reserva.fechaFin"                 
+                  name="propi"
+                  required                  
+                  #propi="ngModel"/>              
+              </div>
+            </div>
+              <div class="form-row py-2">
+                <div class="col-lg-4 col-md-12">
+              <section>
+                <label for="Usuario">Usuario</label>
+                <select name="Usuario" [(ngModel)]="usuario.id" >
+                  <option *ngFor="let au of usuarios" [value]="au.id">
+                    <span>{{ au.correo }}</span>
+                  </option>
+                </select>
+            </section>            
+            </div>  
+          </div>
+                         
+             
+          </form>
+        </div>
+        <div class="modal-footer">         
+          <button type="button" class="btn btn-primary" role="button" (click)="onCambio()">Crear Reserva</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
