@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   host: 'http://localhost:8080/',
-  hostControladores: 'http://localhost:8080/api/'
+  //hostControladores: 'http://localhost:8080/api/'
+  hostControladores: 'https://reservastic.herokuapp.com/api/'
 };
 
 /*
