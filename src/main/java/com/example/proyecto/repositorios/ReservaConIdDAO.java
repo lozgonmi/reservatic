@@ -12,8 +12,8 @@ import com.example.proyecto.entidades.ReservaConId;
 
 @RepositoryRestResource(path = "reservaconids", itemResourceRel = "reservaconid", collectionResourceRel = "reservaconids")
 public interface ReservaConIdDAO extends JpaRepository<ReservaConId, Long>{
-	@RestResource(path="reservalibre")
-    List<ReservaConId> findByIdActivoAndTemporalBetween(@Param("activo")long idActivo, @Param("fechainicio") LocalDateTime fechaInicio, @Param("fechafin") LocalDateTime fechaFin);
+	//@RestResource(path="reservalibre")
+   // List<ReservaConId> findByIdActivoAndTemporalBetween(@Param("activo")long idActivo, @Param("fechainicio") LocalDateTime fechaInicio, @Param("fechafin") LocalDateTime fechaFin);
 
 
 }
