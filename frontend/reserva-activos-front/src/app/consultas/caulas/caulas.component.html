@@ -1,0 +1,16 @@
+
+<h1>Elija el aula del que quiere realizar consulta</h1>
+<section>
+      <label for="Aula">Aula</label>
+      <select name="Aula" [(ngModel)]="aula.id">
+        <option *ngFor="let au of aulas" [value]="au.id">
+          <span>{{ au.nombreAula }}</span>
+        </option>
+      </select>
+  </section>
+ <button type="button" class="btn btn-primary" role="button"  [routerLink]="['/consultas/reservaula', aula.id]"
+ routerLinkActive="router-link-active">Consultar Reservas</button>
+   
+ 
+
+     

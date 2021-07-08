@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-3 mx-2">NOMBRE</div>
+    <div class="col-2 mx-2">PROYECTOR</div>      
+</div>
+    <hr class='w-100'>
+    <div *ngFor='let aula of aulas'>
+      <app-aula
+      [aula]= 'aula' (aulaSeleccionada)="verDatos($event)"
+      ></app-aula>    
+    </div>
+    
+
+
+
+  <!--Modal-->
+  <div class="modal fade" id="modalreservas" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="Realizar Reserva" id="exampleModalLongTitle">Su reserva está tramitada a la espera de la  confirmación del responsable del Aula</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-footer">         
+          <button type="button" class="btn btn-primary" role="button"  data-bs-dismiss="modal"(click)="onCambio()">Confirmar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>

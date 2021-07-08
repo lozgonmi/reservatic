@@ -1,0 +1,80 @@
+
+
+
+<div class="col-8">INTRODUZCA LOS DATOS DE SU RESERVA</div>
+         <form #reservaForm="ngForm">
+            <div class="form-row py-2">
+                <div class="col-lg-4 col-md-12">
+                  <label >Introduzca número de asistentes <sup class="text-danger">*</sup></label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    min = "0"
+                    [(ngModel)]="asistentes"                   
+                    name="asistentes"
+                    required                   
+                    #propi="ngModel"/>
+                </div>
+              </div>
+              <div class="form-row py-2">
+                <div class="col-lg-4 col-md-12">
+                  <label >¿Es necesario proyector? <sup class="text-danger">*</sup></label>
+                  <input
+                    type="checkbox"
+                    class="form-control"
+                    [(ngModel)]="proyector"                   
+                    name="proyector"
+                    required                   
+                    #propi="ngModel"/>
+                </div>
+              </div>
+
+              
+              <div class="form-row py-2">
+                <div class="col-lg-4 col-md-12">
+                  <label >Fecha Inicio Reserva <sup class="text-danger">*</sup></label>
+                  <input
+                    type="datetime-local"
+                    
+                    class="form-control"
+                    [(ngModel)]="reserva.fechaInicio"                   
+                    name="propi"
+                    required                   
+                    #propi="ngModel"/>
+                </div>
+              </div>
+              <div class="form-row py-2">
+              <div class="col-lg-4 col-md-12">
+                <label >Fecha Fin Reserva <sup class="text-danger">*</sup></label>
+                <input
+                type="datetime-local"
+                
+                  class="form-control"
+                  [(ngModel)]="reserva.fechaFin"                 
+                  name="propi"
+                  required                  
+                  #propi="ngModel"/>              
+              </div>
+            </div>
+              <div class="form-row py-2">
+                <div class="col-lg-4 col-md-12">
+              <section>
+                <label for="Usuario">Usuario</label>
+                <select name="Usuario" [(ngModel)]="usuario.id" >
+                  <option *ngFor="let au of usuarios" [value]="au.id">
+                    <span>{{ au.correo }}</span>
+                  </option>
+                </select>
+            </section>            
+            </div>  
+          </div>
+                         
+             
+          </form>
+       
+               
+          <button type="button" class="btn btn-primary" role="button" [routerLink]="['/reservas/confirmoreserva', asistentes, proyector, reserva.fechaInicio, reserva.fechaFin, usuario.id]"
+          routerLinkActive="router-link-active" (click)="onCambio()">Consultar Disponibilidad</button>
+          <button type="button" class="btn btn-secondary" >Cerrar</button>
+     
+     

@@ -1,0 +1,19 @@
+<div class="col-12  mt-3"> Reservas por validar del  Aula : {{aula.nombreAula }}</div>
+<div class="row">
+    <div class="col-3 mx-2">Fecha Inicio</div>
+      <div class="col-2 mx-2">Fecha Fin</div>
+      <div class="col-2 mx-2">Solicitante</div>
+      
+    </div>
+    <hr class='w-100'>
+    <div *ngFor='let reserva of reservas'>
+        <ul *ngIf = "reserva.reservaAprobada ===false" >
+      <app-aulasaux
+      [reserva]= 'reserva'
+      [idReserva] = 'reserva.id'
+      [idAula] = 'aula.id'
+      [id] = 'id'
+      ></app-aulasaux>
+    </ul>
+</div>
+

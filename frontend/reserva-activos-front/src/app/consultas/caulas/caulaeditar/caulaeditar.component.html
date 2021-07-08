@@ -1,0 +1,45 @@
+<form #reservaForm="ngForm">
+    <div class="form-row py-2">
+      <div class="col-lg-4 col-md-12">
+        <label >Formulario para modificar una reserva. No debe aumentar el periodo de la reserva. Si necesita otro periodo deberá borrar esta reserva y solicitar una nueva.<sup class="text-danger">*</sup></label
+        >
+        <input
+          type="datetime-local"
+          class="form-control"
+          [(ngModel)]="reserva.fechaInicio"
+          placeholder="fechaInicio"
+                 
+          name="propi"
+          required
+          #propi="ngModel"
+          
+        />
+        <input
+        type="datetime-local"
+        class="form-control"
+        [(ngModel)]="reserva.fechaFin"
+        placeholder="fechaFin"
+        name="propi"
+        required
+        #propi="ngModel"
+        
+      />
+      </div>
+    </div>
+      
+    <div class="form-row justify-content-between pt-5">
+      <div class="col-lg-5 col-md-12">
+        <button
+          class="btn btn-primary"
+          role="button" (click)="onCambio()">
+          Modificar Reserva
+        </button>
+        
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-12">
+      <button  type="button" name="borrar"  class="btn" (click)="borrar()">
+    Eliminar</button></div>
+</form>
+  

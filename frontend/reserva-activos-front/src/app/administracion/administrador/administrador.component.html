@@ -1,0 +1,38 @@
+<div class="col-12">
+    <h1>Validación de reservas de sus activos</h1>
+    <form #reservaForm="ngForm">
+        <div class="form-row py-2">
+          <div class="col-lg-4 col-md-12">
+            <label >Introduzca su identificador de usuario <sup class="text-danger">*</sup></label
+            >
+     <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="usuario.id"
+          placeholder="Id Usuario"
+          name="propi"
+          required
+          minlength="2"
+          #propi="ngModel"
+          
+        />
+       
+        
+    </div>
+</div>
+
+<div class="form-row justify-content-between pt-5">
+    <div class="col-lg-8 col-md-12">
+      <button
+      type="button"
+        class="btn btn-primary"
+        role="button" [routerLink]="['/administracion/validoreserva', usuario.id]"
+        routerLinkActive="router-link-active" >
+        Consultar Reservas 
+      </button>
+      
+    </div>
+  </div>
+</form>
+
+  

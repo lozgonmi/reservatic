@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm 
+                                     http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
+                 version="1.0">
+
+
+    <mapped-superclass class="com.example.proyectolib.entidades.Activo" access="FIELD">
+    
+    <attributes>
+       		 
+        
+             <basic name="descripcion">
+                <column name="DESCRIPCION"/>
+            </basic>
+             <basic name="ubicacion">
+                <column name="UBICACION"/>
+            </basic>
+            <basic name="telefonoIncidencias">
+                <column name="TELEFONOINCIDENCIAS"/>
+            </basic>
+         <one-to-many name="reservas" target-entity="com.example.proyecto.entidades.ReservaConId" mapped-by="activo"/> 
+           
+              </attributes>
+             
+     </mapped-superclass>
+    </entity-mappings>
